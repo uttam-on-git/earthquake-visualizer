@@ -11,7 +11,7 @@
 
 A real-time, interactive earthquake visualizer built with **React** and **TypeScript**.  
 
-[**Live Demo**]()
+[**Live Demo**](https://earthquake-visualizer-h7tf.vercel.app/)
 
 ---
 
