@@ -10,9 +10,6 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 
-// This component is a great example of composition. It uses shadcn's Button and
-// DropdownMenu components to create a new, specific component for our app.
-// It uses our custom `useTheme` hook to manage state.
 export function ThemeToggle() {
   const { setTheme } = useTheme();
 

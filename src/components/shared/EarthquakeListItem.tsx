@@ -1,9 +1,6 @@
 import type { Earthquake } from '@/types';
 import { Skeleton } from '@/components/ui/skeleton';
 
-// This component is designed to render in two states: either displaying the
-// actual earthquake data or a skeleton placeholder. This is a common and
-// effective pattern for handling loading states within a list.
 interface EarthquakeListItemProps {
   quake?: Earthquake;
   isLoading: boolean;
