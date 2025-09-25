@@ -4,12 +4,19 @@ import { EarthquakeListItem } from './EarthquakeListItem';
 interface EarthquakeListProps {
   quakes: Earthquake[];
   isLoading: boolean;
+  selectedQuakeId: string | null;
+  onQuakeSelect: (id: string | null) => void;
 }
 
-export function EarthquakeList({ quakes, isLoading }: EarthquakeListProps) {
+export function EarthquakeList({
+  quakes,
+  isLoading,
+  selectedQuakeId,
+  onQuakeSelect,
+}: EarthquakeListProps) {
   return (
-    <div className="w-full h-1/2 md:h-full md:w-1/3 lg:w-1/4 border-l flex flex-col">
-      <div className="p-4 border-b sticky top-0 bg-background z-10">
+    <div className="w-full h-full flex flex-col bg-card">
+      <div className="p-4 border-b">
         <h2 className="text-lg font-semibold tracking-tight">
           Recent Earthquakes
         </h2>
@@ -24,6 +31,8 @@ export function EarthquakeList({ quakes, isLoading }: EarthquakeListProps) {
                 key={quake.id}
                 quake={quake}
                 isLoading={false}
+                isSelected={quake.id === selectedQuakeId}
+                onSelect={() => onQuakeSelect(quake.id)}
               />
             ))}
       </div>

@@ -118,3 +118,8 @@
     @apply bg-background text-foreground;
   }
 }
+
+.marker-selected {
+  background-color: transparent;
+  border: none;
+}

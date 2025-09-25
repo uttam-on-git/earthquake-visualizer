@@ -1,14 +1,19 @@
 import type { Earthquake } from '@/types';
 import { Skeleton } from '@/components/ui/skeleton';
+import { cn } from '@/lib/utils';
 
 interface EarthquakeListItemProps {
   quake?: Earthquake;
   isLoading: boolean;
+  isSelected?: boolean;
+  onSelect?: () => void;
 }
 
 export function EarthquakeListItem({
   quake,
   isLoading,
+  isSelected,
+  onSelect,
 }: EarthquakeListItemProps) {
   if (isLoading || !quake) {
     return (
@@ -27,7 +32,13 @@ export function EarthquakeListItem({
         : 'text-green-500';
 
   return (
-    <div className="p-4 border-b hover:bg-muted/50 cursor-pointer">
+    <div
+      onClick={onSelect}
+      className={cn(
+        'p-4 border-b hover:bg-muted/50 cursor-pointer',
+        isSelected && 'bg-muted'
+      )}
+    >
       <h3 className={`font-bold text-lg ${magnitudeColor}`}>
         Magnitude: {quake.mag.toFixed(1)}
       </h3>
