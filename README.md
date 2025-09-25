@@ -1,73 +1,93 @@
-# React + TypeScript + Vite
+# **Earthquake Visualizer**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-38B2AC?logo=tailwind-css&logoColor=white)
+![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-000000)
+![Leaflet](https://img.shields.io/badge/Leaflet-199900?logo=leaflet&logoColor=white)
+![Vitest](https://img.shields.io/badge/Vitest-6E9F18?logo=vitest&logoColor=white)
 
-Currently, two official plugins are available:
+A real-time, interactive earthquake visualizer built with **React** and **TypeScript**.  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[**Live Demo**]()
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## **Key Features**
 
-## Expanding the ESLint configuration
+- **Live USGS Data** – Displays real-time earthquake data on an interactive map.  
+- **Performance Optimized** – Lazy loading and skeleton states for a smooth UX.  
+- **Responsive & Themeable** – Fully responsive design with light/dark modes.  
+- **Professional Tooling** – Git feature-branch workflow, automated code quality checks (ESLint, Prettier, Husky).  
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## **Core Technologies**
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Framework**: React (with Vite)  
+- **Language**: TypeScript  
+- **Styling**: Tailwind CSS & shadcn/ui  
+- **Mapping**: Leaflet & React Leaflet    
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## **Local Development**
+
+### **Clone and install dependencies**
+```bash
+git clone https://github.com/uttam-on-git/earthquake-visualizer
+cd earthquake-visualizer
+npm install
+```
+### Run the development server
+``` bash
+npm run dev
+```
+The app will be available at http://localhost:5173.
+
+### Development
+This project follows best practices for modern React/TypeScript apps.
+
+Linting & Formatting:
+
+```bash
+npm run lint
+npm run format
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Build for production:
+```bash
+npm run build
 ```
+
+Preview production build:
+```bash
+npm run preview
+```
+
+## **Contributing**
+We welcome contributions! Please follow these steps:
+
+Fork the repository
+
+Create a new branch
+
+``` bash
+git checkout -b feature/your-feature-name
+```
+Commit your changes
+
+```bash
+git commit -m "feat: add new feature"
+```
+Push your branch
+```bash
+git push origin feature/your-feature-name
+```
+Open a Pull Request
+
+
+## **License**
+This project is licensed under the MIT License.
