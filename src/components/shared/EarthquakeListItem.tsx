@@ -24,10 +24,13 @@ export function EarthquakeListItem({
     );
   }
 
+  // Check if magnitude is a valid number
+  const hasMagnitude = typeof quake.mag === 'number';
+
   const magnitudeColor =
-    quake.mag > 5
+    hasMagnitude && quake.mag > 5
       ? 'text-destructive'
-      : quake.mag > 3
+      : hasMagnitude && quake.mag > 3
         ? 'text-yellow-500'
         : 'text-green-500';
 
@@ -40,7 +43,8 @@ export function EarthquakeListItem({
       )}
     >
       <h3 className={`font-bold text-lg ${magnitudeColor}`}>
-        Magnitude: {quake.mag.toFixed(1)}
+        {/* Safely render the magnitude */}
+        Magnitude: {hasMagnitude ? quake.mag.toFixed(1) : 'N/A'}
       </h3>
       <p className="text-muted-foreground text-sm">{quake.place}</p>
       <p className="text-muted-foreground text-xs pt-1">
